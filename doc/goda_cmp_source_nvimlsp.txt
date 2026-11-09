@@ -1,0 +1,58 @@
+*goda_cmp_source_nvimlsp.txt*	Neovim LSP completion for goda-cmp.vim
+
+Author: airRnot
+License: MIT license
+
+CONTENTS                                   *goda-cmp-source-nvimlsp-contents*
+
+Introduction		|goda-cmp-source-nvimlsp-introduction|
+Install			|goda-cmp-source-nvimlsp-install|
+Examples		|goda-cmp-source-nvimlsp-examples|
+Params			|goda-cmp-source-nvimlsp-params|
+
+==============================================================================
+INTRODUCTION                           *goda-cmp-source-nvimlsp-introduction*
+
+                                                    *goda-cmp-source-nvimlsp*
+A goda-cmp.vim source that asks the LSP clients Neovim already has attached to
+the buffer.  It starts no language server.  The source is named "nvimlsp".
+
+==============================================================================
+INSTALL                                     *goda-cmp-source-nvimlsp-install*
+
+It needs goda-cmp.vim, goda.vim and Neovim nightly (0.13).
+
+https://github.com/Shougo/goda-cmp.vim
+https://github.com/Shougo/goda.vim
+
+Add the Go package to your configuration module.  Its Lua module is embedded
+in the binary, so no plugin needs to be installed: >
+
+	go get github.com/airRnot1106/goda-cmp-source-nvimlsp
+<
+==============================================================================
+EXAMPLES                                   *goda-cmp-source-nvimlsp-examples*
+>go
+	import "github.com/airRnot1106/goda-cmp-source-nvimlsp/ext/source/nvimlsp"
+
+	b.AddSource(nvimlsp.New(nvimlsp.Params{
+		EnableResolveItem:        true,
+		EnableAdditionalTextEdit: true,
+	}))
+<
+Add "nvimlsp" to `Sources` and call |goda_cmp#build()|.  For the preview of
+the selected item, set pum.vim's previewer option to
+"goda_cmp#get_previewer" (|goda-cmp-preview|).
+
+==============================================================================
+PARAMS                                       *goda-cmp-source-nvimlsp-params*
+
+The parameters are also accepted in sourceParams with these JSON names.
+
+enableResolveItem		Sends completionItem/resolve for the selected
+				and the accepted item.
+enableAdditionalTextEdit	Applies additionalTextEdits (an auto import)
+				when an item is accepted.
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:noet:
