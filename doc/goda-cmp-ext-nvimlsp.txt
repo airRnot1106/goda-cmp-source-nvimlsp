@@ -1,24 +1,24 @@
-*goda_cmp_source_nvimlsp.txt*	Neovim LSP completion for goda-cmp.vim
+*goda-cmp-ext-nvimlsp.txt*	Neovim LSP completion for goda-cmp.vim
 
 Author: airRnot
 License: MIT license
 
-CONTENTS                                   *goda-cmp-source-nvimlsp-contents*
+CONTENTS                                      *goda-cmp-ext-nvimlsp-contents*
 
-Introduction		|goda-cmp-source-nvimlsp-introduction|
-Install			|goda-cmp-source-nvimlsp-install|
-Examples		|goda-cmp-source-nvimlsp-examples|
-Params			|goda-cmp-source-nvimlsp-params|
+Introduction		|goda-cmp-ext-nvimlsp-introduction|
+Install			|goda-cmp-ext-nvimlsp-install|
+Examples		|goda-cmp-ext-nvimlsp-examples|
+Params			|goda-cmp-ext-nvimlsp-params|
 
 ==============================================================================
-INTRODUCTION                           *goda-cmp-source-nvimlsp-introduction*
+INTRODUCTION                              *goda-cmp-ext-nvimlsp-introduction*
 
-                                                    *goda-cmp-source-nvimlsp*
+                                                       *goda-cmp-ext-nvimlsp*
 A goda-cmp.vim source that asks the LSP clients Neovim already has attached to
 the buffer.  It starts no language server.  The source is named "nvimlsp".
 
 ==============================================================================
-INSTALL                                     *goda-cmp-source-nvimlsp-install*
+INSTALL                                        *goda-cmp-ext-nvimlsp-install*
 
 It needs goda-cmp.vim, goda.vim and Neovim nightly (0.13).
 
@@ -28,12 +28,12 @@ https://github.com/Shougo/goda.vim
 Add the Go package to your configuration module.  Its Lua module is embedded
 in the binary, so no plugin needs to be installed: >
 
-	go get github.com/airRnot1106/goda-cmp-source-nvimlsp
+	go get github.com/airRnot1106/goda-cmp-ext-nvimlsp.vim
 <
 ==============================================================================
-EXAMPLES                                   *goda-cmp-source-nvimlsp-examples*
+EXAMPLES                                      *goda-cmp-ext-nvimlsp-examples*
 >go
-	import "github.com/airRnot1106/goda-cmp-source-nvimlsp/ext/source/nvimlsp"
+	import "github.com/airRnot1106/goda-cmp-ext-nvimlsp.vim/ext/source/nvimlsp"
 
 	b.AddSource(nvimlsp.New(nvimlsp.Params{
 		EnableResolveItem:        true,
@@ -45,7 +45,7 @@ the selected item, set pum.vim's previewer option to
 "goda_cmp#get_previewer" (|goda-cmp-preview|).
 
 ==============================================================================
-PARAMS                                       *goda-cmp-source-nvimlsp-params*
+PARAMS                                          *goda-cmp-ext-nvimlsp-params*
 
 The parameters are also accepted in sourceParams with these JSON names.
 

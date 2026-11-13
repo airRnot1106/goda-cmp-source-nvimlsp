@@ -1,4 +1,4 @@
-# goda-cmp-source-nvimlsp
+# goda-cmp-ext-nvimlsp.vim
 
 Neovim LSP completion for [goda-cmp.vim](https://github.com/Shougo/goda-cmp.vim).
 
@@ -16,13 +16,13 @@ The source is a Go package that your goda-cmp configuration imports. Its Neovim 
 
 ```sh
 cd ~/.config/nvim/goda-cmp
-go get github.com/airRnot1106/goda-cmp-source-nvimlsp
+go get github.com/airRnot1106/goda-cmp-ext-nvimlsp.vim
 ```
 
 ## Configuration
 
 ```go
-import "github.com/airRnot1106/goda-cmp-source-nvimlsp/ext/source/nvimlsp"
+import "github.com/airRnot1106/goda-cmp-ext-nvimlsp.vim/ext/source/nvimlsp"
 
 b.AddSource(nvimlsp.New(nvimlsp.Params{
 	EnableResolveItem:        true,
@@ -32,4 +32,4 @@ b.AddSource(nvimlsp.New(nvimlsp.Params{
 
 Add `"nvimlsp"` to `Sources`, then rebuild with `:call goda_cmp#build()`.
 
-See `:help goda-cmp-source-nvimlsp`.
+See `:help goda-cmp-ext-nvimlsp`.

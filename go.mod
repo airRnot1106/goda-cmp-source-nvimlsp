@@ -1,4 +1,4 @@
-module github.com/airRnot1106/goda-cmp-source-nvimlsp
+module github.com/airRnot1106/goda-cmp-ext-nvimlsp.vim
 
 go 1.26.0
 
