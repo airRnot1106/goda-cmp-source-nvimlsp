@@ -536,6 +536,7 @@ func (e *engine) complete(input, after string) {
 	if _, err := e.p.Handlers()["complete"](ctx, e.h, []any{c}); err != nil {
 		e.t.Fatal(err)
 	}
+	cmptest.Wait(e.p)
 }
 
 func (e *engine) call(method string, ref string) {
@@ -543,6 +544,7 @@ func (e *engine) call(method string, ref string) {
 	if _, err := e.p.Handlers()[method](context.Background(), e.h, []any{ref}); err != nil {
 		e.t.Fatal(err)
 	}
+	cmptest.Wait(e.p)
 }
 
 func (e *engine) last() shown {
